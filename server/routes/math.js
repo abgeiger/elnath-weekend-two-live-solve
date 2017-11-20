@@ -8,7 +8,21 @@ router.post('/', function(req, res) {
     var firstNum = parseInt(req.body.firstNum);
     var secondNum = parseInt(req.body.secondNum);
 
-    mathResult = firstNum + secondNum;
+    switch(req.body.operator) {
+        case 'add':
+            mathResult = firstNum + secondNum;
+            break;
+        case 'subtract':
+            mathResult = firstNum - secondNum;
+            break;
+        case 'multiply':
+            mathResult = firstNum * secondNum;
+            break;
+        case 'divide':
+            mathResult = firstNum / secondNum;
+            break;
+    }
+    
     res.sendStatus(200);
 });
 

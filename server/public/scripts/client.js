@@ -6,6 +6,11 @@ function onReady() {
         var secondValue = $('#secondNumber').val();
         var operator = $(this).data('oper')
         calculation(firstValue, secondValue, operator);
+    });
+    $('#clearButton').on('click', function() {
+        $('#firstNumber').val('');
+        $('#secondNumber').val('');
+        $('#result').text('0');
     })
 }
 
